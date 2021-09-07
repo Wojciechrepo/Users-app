@@ -3,11 +3,14 @@ import './UsersList.css';
 
 function UserList(props) {
 
+
+    let usersList = props.usersList;
+    let usersLiElement = usersList.map((user) => {
+        return <li key={user.id}>{user.name} <span>X</span></li>
+    })
     return (
         <ul className="the-list">
-            <li>Łukasz <span>X</span></li>
-            <li>Michał <span>X</span></li>
-            <li>Marcin <span>X</span></li>
+            {usersLiElement}
         </ul>
     );
 }
